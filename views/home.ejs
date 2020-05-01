@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surl</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .id {
+            padding-top: 2em;
+            padding-bottom: 1em;
+        }
+        
+        .h5 {
+            padding: 2em;
+            padding-bottom: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Surl</span>
+    </nav>
+    <br>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQXYJqDw4YZ7hSW2j8WpNxb-l-qxp0zRa1nbAB9GKc50cDxsS0&usqp=CAU" class="img-fluid img-thumbnail rounded float-right align-baseline" alt="Responsive image">
+                <h2 class="display-4 font-weight-bold" style="display: inline;">Create Links Worth Clicking </h2>
+            </p>
+
+            <p class="lead font-weight-normal">Words must be accurate and concise same applies to the links</p>
+        </div>
+    </div>
+    <div class="container bg-info text-white">
+        <br>
+        <form action="/" method="POST">
+            <div class="form-group row id">
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Link:</label>
+                <div class="col-sm-10 col-lg-8">
+                    <input type="url" class="form-control form-control-lg" id="colFormLabelLg" placeholder="http://example.com" name="url">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Get Link</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <% if(shorten.shortened_url!==undefined && shorten.shortened_url.length>0) {%>
+        <div class="container id h5 bg-primary text-white">
+            <span class="float-left"><%= shorten.original_url %>:</span>
+            <br>
+            <br>
+            <span class="float-left h4"><a href="<%= shorten.shortened_url %>" class="text-white"><%= shorten.shortened_url %></a> <- Copy it</span>
+        </div>
+        <% } %>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
